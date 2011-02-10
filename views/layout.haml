@@ -6,39 +6,43 @@
     %meta{:name=>"author", :content=>"AlamoCoders - alamocoders.org"}
     %meta{:name=>"keywords", :content=>"San Antonio, AlamoCoders, User Group, Software Development"}
     %meta{:name=>"description", :content=>"AlamoCoders - San Antonio Software Developers Users Group"}
-    %link{:rel=>"stylesheet", :type=>"text/css", :href=>'style.css'}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>'css/style.css'}
   %body
     #topPanel
       %ul
         %li
           %a{:href=>'mailto:admin@alamocoders.org'} Contact
+        %li
           %a{:href=>'http://groups.google.com/group/alamocoders'} Join
+        %li
           %a{:href=>'/meetings'} Meetings
+        %li
           %a{:href=>'/information'} Information
+        %li
           %a{:href=>'/'} Home
       %a{:href=>'/'}
-        %img{:src=>'AlamoCoderBlack.png', :title => 'AlamoCoders', :width => "230", :height => "80", :border => "0"}
+        %img{:src=>'images/AlamoCoderBlack.png', :title => 'AlamoCoders', :width => "230", :height => "80", :border => "0"}
   #bodyPanel
-    -if flash[:message]
-      #flash #{flash[:message]}
-    -if flash[:error]
-      #flasherror #{flash[:error]}
-  %br
-  = yield
+    = yield
   #footerPanel
-    #footerboydPanel
+    #footerbodyPanel
       %ul
-        %a{:href=>'/'} Home |
-        %a{:href=>'/information'} Information |
-        %a{:href=>'/meetings'} Meetings |
-        %a{:href=>'http://groups.google.com/group/alamocoders'} Join |
-        %a{:href=>'mailto:admin@alamocoders.org'} Contact
+        %li
+          %a{:href=>'/'} Home |
+        %li
+          %a{:href=>'/information'} Information |
+        %li
+          %a{:href=>'/meetings'} Meetings |
+        %li
+          %a{:href=>'http://groups.google.com/group/alamocoders'} Join |
+        %li
+          %a{:href=>'mailto:admin@alamocoders.org'} Contact
       %p.copyright © alamocoders all right reaserved
       %ul.templateworld
         %li Design By:
         %li
           %a{:href=>'http://www.templateworld.com', :target => '_blank'} Template World
-    #footerhtmlPanel
-      %a{:href=>'http://validator.w3.org/check?uri=referer', :target => '_blank'} html
-    #footercssPanel
-      %a{:href=>'http://jigsaw.w3.org/css-validator/check/referer', :target => '_blank'} css
+      #footerhtmlPanel
+        %a{:href=>'http://validator.w3.org/check?uri=referer', :target => '_blank'} html
+      #footercssPanel
+        %a{:href=>'http://jigsaw.w3.org/css-validator/check/referer', :target => '_blank'} css

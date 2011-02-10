@@ -1,28 +1,31 @@
 %h2 Upcoming Meeting
 %p
-  %span When: #{@next_meeting.date_of.strftime("%b %d, %Y")}
-    %br
+  %span When: #{@next_meeting.date}
+  %br
   %span Topic: #{@next_meeting.topic}
-    %br
+  %br
   %span Speaker: #{@next_meeting.speaker}
-    %br
-%p.dotline= image_tag("blank.gif", :width => "40", :height => "1", :alt => "")
+  %br
+%p.dotline
+  %img{:src=>"blank.gif", :width => "40", :height => "1", :alt => ""}
 %br
 %h2 Future Meetings
 - @future_meetings.each do |meeting|
   %p
-    %span When #{meeting.date_of.strftime("%b %d, %Y")}
+    %span When #{meeting.date}
     %br
     %span Speaker #{meeting.speaker}
     %br
-  %p.dotline= image_tag("blank.gif", :width => "40", :height => "1", :alt => "")
+  %p.dotline
+    %img{:src=>"blank.gif", :width => "40", :height => "1", :alt => ""}
   %br
 %h2 Past Meetings
 - @past_meetings.each do |meeting|
   %p
-    %span When #{meeting.date_of.strftime("%b %d, %Y")}
+    %span When #{meeting.date}
     %br
     %span Speaker #{meeting.speaker}
     %br
-  %p.dotline= image_tag("blank.gif", :width => "40", :height => "1", :alt => "")
+  %p.dotline
+    %img{:src=>"blank.gif", :width => "40", :height => "1", :alt => ""}
   %br

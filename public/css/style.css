@@ -47,7 +47,7 @@ ul{list-style-type:none;}
 #bodyPanel #middle_left {float: left; width: 300; background:none; margin: 0; }
 #bodyPanel #middle_right {float: left; width: 100; background:none; margin: 0; }
 #bodyPanel #middle_right p.more{height:26px; padding:0; background:none; margin:0;}
-#bodyPanel #middle_right p.more a{width:76px; height:26px; display:block; margin:250px 20px 19px 618px; background:url(../images/more.gif) 0 0 no-repeat #fff; color:#555; text-decoration:none; font:15px/26px "Trebuchet MS",Arial, Helvetica, sans-serif; padding:0 0 0 10px; text-transform:uppercase; position:absolute; top:0px; right:0px;}
+#bodyPanel #middle_right p.more a{width:76px; height:26px; display:block; margin:250px 20px 19px 618px; background:url(../images/more.gif) 0 0 no-repeat #fff; color:#555; text-decoration:none; font:15px/26px "Trebuchet MS",Arial, Helvetica, sans-serif; padding:0 0 0 4px; text-transform:uppercase; position:absolute; top:0px; right:0px;}
 #bodyPanel #middle_right p.more a:hover{background:url(../images/more.gif) 0 0 no-repeat #fff; color:#216EBD; text-decoration:none;}
 #bodyPanel #meeting{float: left; width:283px; height:162px; display:block; background:url(../images/testimonial-bg.gif) 0 0 no-repeat #FFF6DB; padding:32px 33px 0 148px; margin:0 0 0 20px; color:#786321;}
 #bodyPanel #meeting p{background:none; margin:0; padding:0 0 5px 0;}

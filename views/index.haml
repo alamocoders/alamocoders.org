@@ -1,21 +1,28 @@
-%p.about Welcome to Alamo Coders.  We are a <span>FREE</span> San Antonio area IT professionals Users Group that focus on the tools, technologies, and programming languages that help a software developer/architect/manager in today's industry. If you would like to learn more about software development or the tools that are involved in that process, or if you just want to learn more about what Alamo Coders has to offer the San Antonio area IT community, then please join our group.
+%p.about 
+  Welcome to Alamo Coders.  We are a 
+  %span FREE
+  San Antonio area IT professionals Users Group that focus on the tools, technologies, and programming languages that help a software developer/architect/manager in today's industry. If you would like to learn more about software development or the tools that are involved in that process, or if you just want to learn more about what Alamo Coders has to offer the San Antonio area IT community, then please join our group.
 %p 
   Follow our 
   %a{:href=>'http://twitter.com/alamocoders', :target => '_blank'} @alamocoders
   Twitter account and subscribe to our 
   %a{:href=>'http://groups.google.com/group/alamocoders', :target => '_blank'} group
   to receive updates
-%p.dotline<%= image_tag("blank.gif", :width => "40", :height => "1", :alt => "") %>
+%p.dotline
+  %img{:src=>'images/blank.gif', :width => "40", :height => "1", :alt => ""}
 #middle
   #middle_left
     %h3 Next Meeting
     #meeting
       %p
-        %span When: #{@next_meeting.date}
+        %span When:
+        #{@next_meeting.date}
       %p
-        %span Topic: #{@next_meeting.topic}
+        %span Topic: 
+        #{@next_meeting.topic}
       %p
-        %span Speaker: #{@next_meeting.speaker}
+        %span Speaker:
+        #{@next_meeting.speaker}
   #middle_right
     %h4 Information
     %ul
