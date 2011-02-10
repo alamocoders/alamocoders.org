@@ -1,0 +1,26 @@
+%p.about Welcome to Alamo Coders.  We are a <span>FREE</span> San Antonio area IT professionals Users Group that focus on the tools, technologies, and programming languages that help a software developer/architect/manager in today's industry. If you would like to learn more about software development or the tools that are involved in that process, or if you just want to learn more about what Alamo Coders has to offer the San Antonio area IT community, then please join our group.
+%p Follow our <%= link_to '@alamocoders', 'http://twitter.com/alamocoders', :target => '_blank' %> Twitter account and subscribe to our <%= link_to 'group', 'http://groups.google.com/group/alamocoders', :target => '_blank' %> to receive updates
+%p.dotline<%= image_tag("blank.gif", :width => "40", :height => "1", :alt => "") %>
+#middle
+  #middle_left
+    %h3 Next Meeting
+    #meeting
+      %p
+        %span When: #{@next_meeting.date_of.strftime("%A %b %d, %Y")}
+      %p
+        %span Topic: #{@next_meeting.topic}
+      %p
+        %span Speaker: #{@next_meeting.speaker}
+  #middle_right
+    %h4 Information
+    %ul
+      %li
+        %span Time: starts at 5:30pm
+      %li
+        %span Where:
+        = link_to 'New Horizons Bldg', 'http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=new+horizons+computer+learning+center+san+antonio&sll=38.22623,-85.570149&sspn=0.00799,0.019248&ie=UTF8&hq=new+horizons+computer+learning+center&hnear=San+Antonio,+TX&ll=29.517137,-98.555453&spn=0.012324,0.022724&t=h&z=16&iwloc=A', :target => '_blank'
+      %li
+        %span= link_to 'Suite 500, 5th floor', 'http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=new+horizons+computer+learning+center+san+antonio&sll=38.22623,-85.570149&sspn=0.00799,0.019248&ie=UTF8&hq=new+horizons+computer+learning+center&hnear=San+Antonio,+TX&ll=29.517137,-98.555453&spn=0.012324,0.022724&t=h&z=16&iwloc=A', :target => '_blank'
+      %li
+        %span FREE
+    %p.more= link_to 'More', '/information'
