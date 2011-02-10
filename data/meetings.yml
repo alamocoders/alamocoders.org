@@ -37,10 +37,8 @@
 - meeting:
     date: 08-11-2010
     topic: Arduino
-    speaker: Paul Voccio
-    speaker_job: a Rackspace Cloud Development Manager
-    speaker: Matthew Dietz
-    speaker_job: a Rackspace Cloud Developer
+    speaker: Paul Voccio, Matthew Dietz
+    speaker_job: a Rackspace Cloud Development Manager, a Rackspace Cloud Developer
 - meeting:
     date: 07-14-2010
     topic: Powershell as a Tools Platform 

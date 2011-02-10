@@ -2,7 +2,7 @@ path = File.expand_path "../", __FILE__
 require "#{path}/alamocoders"
 require 'sinatra'
 require 'haml'
-require "#{path}/data/init"
+require "#{path}/data/models"
 
 get '/' do
   @next_meeting = Meeting.next_meeting

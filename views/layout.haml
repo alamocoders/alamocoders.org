@@ -6,36 +6,39 @@
     %meta{:name=>"author", :content=>"AlamoCoders - alamocoders.org"}
     %meta{:name=>"keywords", :content=>"San Antonio, AlamoCoders, User Group, Software Development"}
     %meta{:name=>"description", :content=>"AlamoCoders - San Antonio Software Developers Users Group"}
-    = styleshee_link_tag 'style'
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>'style.css'}
   %body
     #topPanel
       %ul
-        %li= link_to 'Contact', '/contact'
-        %li= link_to 'Join', 'http://groups.google.com/group/alamocoders', :target => '_blank'
-        %li= link_to 'Meetings', '/meetings'
-        %li= link_to 'Information', '/information'
-        %li= link_to 'Home', '/'
-      = link_to image_tag('AlamoCoderBlack.png', :title => 'AlamoCoders', :width => "230", :height => "80", :border => "0"), '/'
+        %li
+          %a{:href=>'mailto:admin@alamocoders.org'} Contact
+          %a{:href=>'http://groups.google.com/group/alamocoders'} Join
+          %a{:href=>'/meetings'} Meetings
+          %a{:href=>'/information'} Information
+          %a{:href=>'/'} Home
+      %a{:href=>'/'}
+        %img{:src=>'AlamoCoderBlack.png', :title => 'AlamoCoders', :width => "230", :height => "80", :border => "0"}
   #bodyPanel
     -if flash[:message]
-      #flash #{flash[:message]
+      #flash #{flash[:message]}
     -if flash[:error]
-      #flasherror #{flash[:error]
+      #flasherror #{flash[:error]}
   %br
   = yield
   #footerPanel
     #footerboydPanel
       %ul
-        %li= link_to 'Home |', '/'
-        %li= link_to ' Information |', '/information'
-        %li= link_to ' Meetings |', '/meetings'
-        %li= link_to ' Join |', 'http://groups.google.com/group/alamocoders', :target => '_blank'
-        %li= link_to ' Contact', 'mailto:admin@alamocoders.org'
+        %a{:href=>'/'} Home |
+        %a{:href=>'/information'} Information |
+        %a{:href=>'/meetings'} Meetings |
+        %a{:href=>'http://groups.google.com/group/alamocoders'} Join |
+        %a{:href=>'mailto:admin@alamocoders.org'} Contact
       %p.copyright © alamocoders all right reaserved
       %ul.templateworld
         %li Design By:
-        %li= link_to 'Template World', 'http://www.templateworld.com', :target => '_blank'
+        %li
+          %a{:href=>'http://www.templateworld.com', :target => '_blank'} Template World
     #footerhtmlPanel
-      = link_to 'html', 'http://validator.w3.org/check?uri=referer', :target => '_blank'
+      %a{:href=>'http://validator.w3.org/check?uri=referer', :target => '_blank'} html
     #footercssPanel
-      = link_to 'css', 'http://jigsaw.w3.org/css-validator/check/referer', :target => '_blank'
+      %a{:href=>'http://jigsaw.w3.org/css-validator/check/referer', :target => '_blank'} css
