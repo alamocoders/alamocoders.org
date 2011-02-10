@@ -10,11 +10,19 @@ class Meeting
     @date = date
     @topic = topic
     @speaker = speaker
-    @speak_job = speaker_job
+    @speaker_job = speaker_job
+  end
+
+  def self.get_formatted_date_from(date)
+    d = date.split("-")
+    d2 = "{#{d[2]},#{d[0]},#{d[1]}}"
+    Date.strptime(d2,"{%Y,%m,%d}").strftime("%A %b %d, %Y")
   end
 
   def self.next_meeting
-    next_meeting = Meeting.new(@meetings[0]["meeting"]["date"],
+    formatted_date = get_formatted_date_from(@meetings[0]["meeting"]["date"])
+
+    next_meeting = Meeting.new(formatted_date,
                                @meetings[0]["meeting"]["topic"],
                                @meetings[0]["meeting"]["speaker"],
                                @meetings[0]["meeting"]["speaker_job"])
@@ -22,10 +30,14 @@ class Meeting
 
   def self.past_meetings
     meetings = []
-  end
-
-  def self.future_meetings
-    meetings = []
+    for i in 1..@meetings.length-1
+      formatted_date = get_formatted_date_from(@meetings[i]["meeting"]["date"])
+      meetings << Meeting.new(formatted_date,
+                               @meetings[i]["meeting"]["topic"],
+                               @meetings[i]["meeting"]["speaker"],
+                               @meetings[i]["meeting"]["speaker_job"])
+    end
+    meetings
   end
 end
 

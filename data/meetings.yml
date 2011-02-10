@@ -13,7 +13,7 @@
     date: 01-12-2011
     topic: ASP.NET MVC 3/Razor 
     speaker: Jasdeep Singh
-    speaker_job: AlamoCoders Director and Independent Consultant.
+    speaker_job: AlamoCoders Director and Independent Consultant
 - meeting:
     date: 12-08-2010
     topic: Open Discussion
@@ -56,7 +56,7 @@
     speaker_job: a Rackspace software developer 
 - meeting:
     date: 04-14-2010
-    topic: Boo, The Extensible Little Language On The CLR Youve Never Heard Of
+    topic: Boo, The Extensible Little Language On The CLR You've Never Heard Of
     speaker: Ryan Svihla 
     speaker_job: a Rackspace Cloud software developer 
 - meeting:

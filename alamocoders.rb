@@ -16,7 +16,6 @@ end
 get '/meetings' do
   @next_meeting = Meeting.next_meeting
   @past_meetings = Meeting.past_meetings
-  @future_meetings = Meeting.future_meetings
   haml :meetings
 end
 
