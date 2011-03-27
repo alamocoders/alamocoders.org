@@ -1,5 +1,5 @@
 ---
--meeting:
+- meeting:
     date: 04-13-2011
     topic: Better .NET development with Mono
     speaker: Louis Salin
