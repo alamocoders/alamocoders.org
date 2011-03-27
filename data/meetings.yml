@@ -1,4 +1,9 @@
 ---
+-meeting:
+    date: 04-13-2011
+    topic: Better .NET development with Mono
+    speaker: Louis Salin
+    speaker_job: Software Engineer, Compass Learning
 - meeting:
     date: 03-09-2011
     topic: Test Driven Design (TDD) when working with Razor template engine and ASP.NET MVC 
