@@ -12,4 +12,3 @@ group :development, :test do
     gem 'rack-test', '0.5.7'
     gem 'capybara', '0.4.1.2'
 end
-
