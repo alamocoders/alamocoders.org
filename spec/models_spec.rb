@@ -3,10 +3,6 @@ require_relative './spec_helper'
 describe User do
   context 'when creating user' do
 
-    before(:all) do
-      MongoMapper.connection = Mongo::Connection.new('localhost')
-      MongoMapper.database = 'alamocoders'
-    end
 
     before(:each)do
       @user = User.new

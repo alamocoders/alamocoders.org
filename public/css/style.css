@@ -109,3 +109,18 @@ ul{list-style-type:none;}
   padding:4px 8px;
   margin-bottom:0px;
 }
+
+.users{
+  width:90%;
+  border-style:dotted;
+  border-width:1px;
+  margin-left:auto;
+  margin-right:auto; 
+  border-collapse:collapse;
+}
+.users >th,td{
+  padding-left:15px;
+  padding-right:15px;
+  border-width:1px;
+  border-style:dotted;
+}
