@@ -7,7 +7,6 @@ Feature: admin panel
     Given I have access to the admin panel
     When I add the user from the admin panel
     Then they will show up in the list of directors
-    And be able to log in themselves
 
     Scenario: Hacker
     Given The hacker does not have an account

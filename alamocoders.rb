@@ -2,16 +2,11 @@ path = File.expand_path "../", __FILE__
 require 'sinatra'
 require 'haml'
 require "#{path}/data/models"
+require_relative "./lib/helpers"
 
-if ENV['MONGOHQ_HOST']
-  puts "Running on MongoHQ" 
-  MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
-  MongoMapper.database = ENV['MONGOHQ_DATABASE']
-  MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
-else
-  puts "Using local database" 
-  MongoMapper.database = 'alamocoders'
-end
+helpers Auth
+
+Database::connect
 
 get '/' do
   @next_meeting = Meeting.next_meeting
@@ -29,11 +24,13 @@ get '/meetings' do
 end
 
 get '/users' do
+  protected!
   @users = User.all
   haml :users
 end
 
 post '/users/add' do
+  protected!
   @user = User.new
   @user.full_name = params[:full_name]
   @user.password = params[:password]
@@ -43,6 +40,7 @@ post '/users/add' do
 end
 
 get '/users/delete/:id' do |id|
+  protected!
   User.destroy(id) 
   redirect '/users'
 end

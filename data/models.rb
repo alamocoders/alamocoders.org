@@ -45,8 +45,8 @@ end
 
 
 class User
-
   include MongoMapper::Document
+
   key :username, String, :required=>true
   key :password_hash, String, :required=>true
   key :full_name, String, :required=>true
