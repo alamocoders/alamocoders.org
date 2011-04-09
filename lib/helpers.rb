@@ -32,4 +32,5 @@ module Database
       MongoMapper.database = 'alamocoders'
     end
   end
+
 end
