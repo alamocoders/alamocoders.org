@@ -4,9 +4,8 @@ require 'rack/test'
 require 'capybara/cucumber'
 require 'rspec'
 After do |s| 
-  if User.all(:username=>"foo").count > 0
-    User.destroy(:username=>"foo")
-  end
+  User.all(:username=>"jobob").each { |u| User.destroy(u.id) }
+  User.all(:username=>"foo").each { |u| User.destroy(u.id) }
 end
 
 Capybara.app = Sinatra::Application
