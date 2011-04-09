@@ -1,8 +1,12 @@
 source :gemcutter
+
 gem 'sinatra', '1.2.0'
 gem 'haml', '3.0.25'
-gem 'sequel', '3.19.0'
-gem 'sqlite3', '1.3.3'
+gem 'mongo'
+gem 'mongo_mapper'
+gem 'bson_ext'
+gem 'bcrypt-ruby'
+gem 'i18n'
 
 group :development, :test do
     gem 'rspec', '2.5.0'

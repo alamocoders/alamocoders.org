@@ -1,10 +1,8 @@
 path = File.expand_path "../", __FILE__
 require 'sinatra'
-require 'sequel'
 require 'haml'
 require "#{path}/data/models"
 
-base = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://development.db')
 
 get '/' do
   @next_meeting = Meeting.next_meeting

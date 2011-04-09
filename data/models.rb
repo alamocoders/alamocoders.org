@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'yaml'
+require 'mongo_mapper'
+require 'bcrypt'
 
 class Meeting
   attr_accessor :date, :speaker, :topic, :speaker_job
@@ -41,3 +43,20 @@ class Meeting
   end
 end
 
+
+class User
+
+  include MongoMapper::Document
+  key :username, String, :required=>true
+  key :password_hash, String, :required=>true
+  key :full_name, String, :required=>true
+
+
+  def password
+    BCrypt::Password.new(@password_hash) 
+  end
+  def password=(new_password)
+    @password_hash = BCrypt::Password.create(new_password)
+  end
+ 
+end
