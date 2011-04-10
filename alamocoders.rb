@@ -6,7 +6,10 @@ require_relative "./lib/helpers"
 
 helpers Auth
 
-Database::connect
+begin
+    Database::connect
+rescue
+end
 
 get '/' do
   @next_meeting = Meeting.next_meeting
