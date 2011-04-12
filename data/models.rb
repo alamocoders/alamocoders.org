@@ -3,16 +3,18 @@ require 'yaml'
 require 'mongo_mapper'
 require 'bcrypt'
 
-class Meeting
-  attr_accessor :date, :speaker, :topic, :speaker_job
-  path = File.expand_path "../", __FILE__
-  @meetings = YAML::load File.open("#{path}/meetings.yml")
 
-  def initialize(date, topic, speaker, speaker_job)
-    @date = date
-    @topic = topic
-    @speaker = speaker
-    @speaker_job = speaker_job
+class Meeting
+  include MongoMapper::Document
+  
+  key :topic, String, :required=>true
+  key :kind, String, :required=>true  
+  key :date, Date, :required=>true
+  key :sponsor, String
+  one :speaker
+
+  def formatted_date
+    @date.strftime("%A %B %d, %Y")
   end
 
   def self.get_formatted_date_from(date)
@@ -21,28 +23,27 @@ class Meeting
     Date.strptime(d2,"{%Y,%m,%d}").strftime("%A %b %d, %Y")
   end
 
-  def self.next_meeting
-    formatted_date = get_formatted_date_from(@meetings[0]["meeting"]["date"])
-
-    next_meeting = Meeting.new(formatted_date,
-                               @meetings[0]["meeting"]["topic"],
-                               @meetings[0]["meeting"]["speaker"],
-                               @meetings[0]["meeting"]["speaker_job"])
+  def self.past_meetings()
+    Meeting.where(:date.lt =>Date.today.to_time).sort(:date.desc).all
   end
 
-  def self.past_meetings
-    meetings = []
-    for i in 1..@meetings.length-1
-      formatted_date = get_formatted_date_from(@meetings[i]["meeting"]["date"])
-      meetings << Meeting.new(formatted_date,
-                               @meetings[i]["meeting"]["topic"],
-                               @meetings[i]["meeting"]["speaker"],
-                               @meetings[i]["meeting"]["speaker_job"])
-    end
-    meetings
+  def self.next_meeting(kind_type="all")
+  if kind_type=="all"
+    return Meeting.where(:date.gte=>Date.today.to_time).sort(:date).all
   end
+    Meeting.where(:kind=>kind_type,:date.gte=>Date.today.to_time).sort(:date).limit(1).all[0]
+  end
+
 end
 
+class Speaker
+  include MongoMapper::EmbeddedDocument
+
+  key :bio, String
+  key :name, String, :required=>true
+  key :job, String
+
+end
 
 class User
   include MongoMapper::Document

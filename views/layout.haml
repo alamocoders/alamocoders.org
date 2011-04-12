@@ -9,6 +9,9 @@
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>'css/style.css'}
   %body
     #topPanel
+      #left
+      %a#alamocoders{:href=>'/'}
+        %span.alt alamocoders
       %ul
         %li
           %a{:href=>'mailto:admin@alamocoders.org'} Contact
@@ -20,13 +23,11 @@
           %a{:href=>'/information'} Information
         %li
           %a{:href=>'/'} Home
-      %a{:href=>'/'}
-        %img{:src=>'images/AlamoCoderBlack.png', :title => 'AlamoCoders', :width => "230", :height => "80", :border => "0"}
   #bodyPanel
     = yield
   #footerPanel
     #footerbodyPanel
-      %ul
+      %ul.links
         %li
           %a{:href=>'/'} Home
           |
@@ -41,7 +42,8 @@
           |
         %li
           %a{:href=>'mailto:admin@alamocoders.org'} Contact
-      %p.copyright © alamocoders all right reaserved
+      %br
+      %p.copyright © alamocoders all right reserved
       %ul.templateworld
         %li Design By:
         %li

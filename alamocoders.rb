@@ -5,6 +5,7 @@ require "#{path}/data/models"
 require_relative "./lib/helpers"
 
 helpers Auth
+helpers View
 
 begin
     Database::connect
@@ -12,8 +13,14 @@ rescue
 end
 
 get '/' do
-  @next_meeting = Meeting.next_meeting
+  @next_dotnet_meeting = Meeting.next_meeting(".NET")
+  @next_ruby_meeting = Meeting.next_meeting("Ruby")
+ # @next_erlang_meeting = Meeting.next_meeting("erlang")
   haml :index
+end
+
+get 'about' do 
+  haml :about
 end
 
 get '/information' do
@@ -21,8 +28,8 @@ get '/information' do
 end
 
 get '/meetings' do
-  @next_meeting = Meeting.next_meeting
-  @past_meetings = Meeting.past_meetings
+  @upcoming_meetings = Meeting.next_meeting()
+  @past_meetings = Meeting.past_meetings()
   haml :meetings
 end
 
