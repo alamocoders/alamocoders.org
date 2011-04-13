@@ -31,7 +31,14 @@ class Meeting
   if kind_type=="all"
     return Meeting.where(:date.gte=>Date.today.to_time).sort(:date).all
   end
-    Meeting.where(:kind=>kind_type,:date.gte=>Date.today.to_time).sort(:date).limit(1).all[0]
+    meetings  = Meeting.where(:kind=>kind_type,:date.gte=>Date.today.yesterday.to_time).sort(:date).limit(1).all
+    if meetings.count == 0
+     tbd = Meeting.new
+     tbd.topic = "TBD"
+     tbd.date = Date.parse("2011-05-11")
+     tbd.speaker = "TBD"
+     return tbd
+    end
   end
 
 end
