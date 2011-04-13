@@ -39,6 +39,7 @@ class Meeting
      tbd.speaker = "TBD"
      return tbd
     end
+    return meetings[0]
   end
 
 end
