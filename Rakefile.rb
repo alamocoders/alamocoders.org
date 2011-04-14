@@ -18,6 +18,7 @@ end
 desc "Mongo Migrate Script"
 task :migrate do 
   Database::connect 
+  create_meeting('2011-05-13', 'Git for SVN users', 'Derick Bailey', 'Chief Ninja at Muted Solutions, LLC', '.NET')
   create_meeting('2011-04-27', 'Up and Running with Heroku, MongoDB, and Sinatra', 'Ryan Svihla', 'Software Developer, Carenet', 'Ruby')
   create_meeting('2011-04-13' ,'Better .NET development with Mono ', 'Louis Salin', 'Software Engineer, Compass Learning', '.NET')
   create_meeting('2011-03-09','Test Driven Design (TDD) when working with Razor template engine and ASP.NET MVC', 'Paul Herrera', 'Principal Software Engineer, Tribute', '.NET')
