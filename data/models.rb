@@ -11,6 +11,8 @@ class Meeting
   key :kind, String, :required=>true  
   key :date, Date, :required=>true
   key :sponsor, String
+  key :time, String
+  key :location_name, String
   one :speaker
 
   def formatted_date

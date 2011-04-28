@@ -13,9 +13,7 @@ rescue
 end
 
 get '/' do
-  @next_dotnet_meeting = Meeting.next_meeting(".NET")
-  @next_ruby_meeting = Meeting.next_meeting("Ruby")
- # @next_erlang_meeting = Meeting.next_meeting("erlang")
+  @next_meetings = Meeting.where(:date.gte=>Date.today.to_time).sort(:date.desc).limit(4).all.sort {|m| m.date}
   haml :index
 end
 
@@ -31,6 +29,18 @@ get '/meetings' do
   @upcoming_meetings = Meeting.next_meeting()
   @past_meetings = Meeting.past_meetings()
   haml :meetings
+end
+
+post '/meetings/add' do
+  protected!
+  Meeting.create(params)
+  redirect '/users'
+end
+
+get '/meetings/delete/:id' do |id|
+  protected!
+  Meeting.destroy(id) 
+  redirect '/users'
 end
 
 get '/users' do

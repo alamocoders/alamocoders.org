@@ -11,7 +11,11 @@ module Auth
     if @auth.provided? && @auth.basic? && @auth.credentials
       users = User.all(:username=>@auth.credentials[0])
       if(users.count > 0)
-        return users[0].password == @auth.credentials[1]
+        is_logged_in = users[0].password == @auth.credentials[1]
+        if is_logged_in
+          @current_user = users[0]
+        end
+        return is_logged_in
       end
     end
     false
