@@ -13,7 +13,7 @@ rescue
 end
 
 get '/' do
-  @next_meetings = Meeting.where(:date.gte=>Date.today.to_time).sort(:date.desc).limit(4).all.sort {|m| m.date}
+  @next_meetings = Meeting.where(:date.gte=>Date.today.yesterday.to_time).sort(:date).limit(4).all
   haml :index
 end
 
