@@ -3,7 +3,6 @@ require 'yaml'
 require 'mongo_mapper'
 require 'bcrypt'
 
-
 class Meeting
   include MongoMapper::Document
   
@@ -13,6 +12,7 @@ class Meeting
   key :sponsor, String
   key :time, String
   key :location_name, String
+  key :location_map, String
   one :speaker
 
   def formatted_date

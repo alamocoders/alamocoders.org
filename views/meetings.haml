@@ -1,30 +1,12 @@
 %h2 Upcoming Meetings
 - @upcoming_meetings.each do |up_next|
-  %p
-    %span When:
-    #{up_next.date}
-    %br
-    %span Topic:
-    #{up_next.topic}
-    %br
-    %span Speaker:
-    #{up_next.speaker.name}, #{up_next.speaker.job}
-    %br
+  = partial :meeting_kind, :locals=>{:next_meeting=>up_next}
   %p.dotline
     %img{:src=>"images/blank.gif", :width => "40", :height => "1", :alt => ""}
-    %br
+  %br
 %h2 Past Meetings
 - @past_meetings.each do |meeting|
-  %p
-    %span When 
-    #{meeting.date}
-    %br
-    %span Topic:
-    #{meeting.topic}
-    %br
-    %span Speaker 
-    #{meeting.speaker.name}, #{meeting.speaker.job}
-    %br
+  = partial :meeting_kind, :locals=>{:next_meeting=>meeting}
   %p.dotline
     %img{:src=>"images/blank.gif", :width => "40", :height => "1", :alt => ""}
   %br

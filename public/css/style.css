@@ -50,11 +50,32 @@ a .alt { display: none; }
 #bodyPanel .middle_left { width: 300px; background:none; margin: 0; }
 #bodyPanel .middle_right {width: 100px; background:none; margin: 0; }
 #bodyPanel .middle_right p.more{height:26px; padding:0; background:none; margin:0;}
-#bodyPanel .middle_right p.more a{width:76px; height:26px; display:block; margin:250px 20px 19px 618px; background:url(../images/more.gif) 0 0 no-repeat #fff; color:#555; text-decoration:none; font:15px/26px "Trebuchet MS",Arial, Helvetica, sans-serif; padding:0 0 0 4px; text-transform:uppercase; }
+#bodyPanel .middle_right p.more a{
+    width:76px;
+    height:26px;
+    display:block;
+    margin:250px 20px 19px 618px;
+    background:url(../images/more.gif) 0 0 no-repeat #fff;
+    color:#555; text-decoration:none;
+    font:15px/26px "Trebuchet MS",Arial, Helvetica, sans-serif;
+    padding:0 0 0 4px; 
+    text-transform:uppercase; 
+}
 #bodyPanel #middle_right p.more a:hover{background:url(../images/more.gif) 0 0 no-repeat #fff; color:#216EBD; text-decoration:none;}
-#bodyPanel .meeting{width:503px; height:82px; display:block;;background: url(../images/testimonial-bg.gif) #FFF6DB; padding:0px 45px 0 148px; margin:0 0 0 25px; color:#786321;}
+#bodyPanel .meeting{
+    width:503px;
+    height:100px;
+    display:block;
+    background: url(../images/testimonial-bg.gif) #FFF6DB;
+    padding:0px 45px 0 148px;
+    margin:0 0 0 25px;
+    color:#786321;
+}
 #bodyPanel .meeting p{background:none; margin:0; padding:0 0 0 0;}
 #bodyPanel .meeting p span{color:#786321 !Important; background:#FFFAED !Important;}
+#bodyPanel .meeting_info
+{
+}
 #bodyPanel p.moretwo{height:26px; padding:0; background:none; margin:0;}
 #bodyPanel p.moretwo a{width:76px; height:26px; display:block; margin:0px 0px 0px 196px; background:url(../images/more2.gif) 0 0 no-repeat #FFF5D6; color:#555; text-decoration:none; font:15px/26px "Trebuchet MS",Arial, Helvetica, sans-serif; text-transform:uppercase; padding:0 0 0 10px;}
 #bodyPanel p.moretwo a:hover{background:url(../images/more2.gif) 0 0 no-repeat #FFF5D6; color:#216EBD; text-decoration:none;}
@@ -130,4 +151,18 @@ a .alt { display: none; }
   padding-right:15px;
   border-width:1px;
   border-style:dotted;
+}
+.add_form .button{
+    margin-left:410px;
+    width:50px;
+}
+.add_form input{
+    margin-left:10px;
+    width:200px;
+}
+
+.label{
+    float:left;
+    width: 250px;
+    text-align:right;
 }

@@ -2,7 +2,7 @@ require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
 require 'mongo_mapper'
 require 'sinatra'
-require_relative './data/models'
+require_relative './lib/models'
 require_relative './lib/helpers'
 task :default => [:spec, :features]
 
