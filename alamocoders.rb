@@ -43,7 +43,7 @@ post '/meetings' do
   meeting.topic = params["topic"]
   meeting.time = params["time"]
   meeting.date = DateTime.strptime(params["date"], "%m/%d/%Y").to_time
-  if params["where"] == "panera bread"
+  if params["where"] == "Panera Bread"
     meeting.location_map = "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=new+horizons+computer+learning+center+san+antonio&sll=38.22623,-85.570149&sspn=0.00799,0.019248&ie=UTF8&hq=new+horizons+computer+learning+center&hnear=San+Antonio,+TX&ll=29.517137,-98.555453&spn=0.012324,0.022724&t=h&z=16&iwloc=A"
     meeting.location_name = "Panera Bread"
   elsif params["where"] == "other"
