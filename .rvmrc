@@ -1,1 +1,1 @@
-rvm --create use ruby-1.9.2-p180@ac
+rvm --create use ruby-1.9.2-p290@ac
