@@ -25,6 +25,10 @@ get '/information' do
   haml :information
 end
 
+get '/sponsors' do
+  haml :sponsors
+end
+
 get '/meetings' do
   @upcoming_meetings = Meeting.next_meeting()
   @past_meetings = Meeting.past_meetings()
