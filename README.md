@@ -18,7 +18,7 @@ admin@alamocoders.org
 ### Requirements
 
 + Bundler 1.0.10 or greater. [download here](http://gembundler.com/)
-+ Ruby 1.9.2-p180
++ Ruby 1.9.2-p290
 
 
 ### Getting started with development
