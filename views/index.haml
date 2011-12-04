@@ -12,8 +12,12 @@
   %p.dotline
   %h3 Upcoming Meetings
   %br
-- @next_meetings.each do |meeting|
-  = partial :meeting_kind , :locals=>{:next_meeting => meeting}
-  %p.dotline
-    %img{:src=>"images/blank.gif", :width => "40", :height => "1", :alt => ""}
-  %br
+- if @next_meetings.count == 0
+  %p
+    There are no upcoming meetings.
+- else
+  - @next_meetings.each do |meeting|
+    = partial :meeting_kind , :locals=>{:next_meeting => meeting}
+    %p.dotline
+      %img{:src=>"images/blank.gif", :width => "40", :height => "1", :alt => ""}
+    %br
